@@ -1,10 +1,20 @@
-body{
-    background-color: #B5E2FA;
+$lightBlue:#B5E2FA;
+$blue:#33A1FD;
+$white:#fff;
+$cream:#dddddd;
+$darkcream:#bfbfbf;
+$dark:#31393C;
+$grey:#505050;
+$orange:#FDCA40;
+$orangeDark:#F79824;
+$green:#1fa548;
+body {
+    background-color: $lightBlue;
 }
 
 #app {
     min-height: 400px;
-    background-color: #33A1FD;
+    background-color: $blue;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -12,10 +22,11 @@ body{
     margin-top: 30px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     position: relative;
+    padding: 10px;
 }
 
-.complete {
-    color: green;
+input:focus {
+    outline: none;
 }
 
 .searchContainer {
@@ -23,7 +34,7 @@ body{
     i {
         border-radius: 100%;
         padding: 10px;
-        background-color: #fff;
+        background-color: $white;
         &:hover {
             cursor: pointer;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -32,32 +43,40 @@ body{
     }
     input {
         border: none;
-        background-color: #fff;
+        background-color: $white;
         padding: 5px;
+        &::placeholder {
+            color: $cream;
+        }
     }
 }
 
 .searchInput {
     border: none;
-    background-color: rgba(229, 229, 229, 0.82);
+    background-color: $white;
     padding: 5px;
+    color: $darkcream;
+    margin-left: 10px;
+    width: 60%;
 }
 
 .hide {
-    display: none;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    z-index: 1 !important;
+    transition: all 600ms ease-in-out;
 }
 
 h1 {
     text-align: center;
-    color: #d4d4d4
+    color: $darkcream;
 }
 
 .inputContainer {
     width: 100%;
     margin: 0 auto;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid $white;
     padding: 20px 0px 20px 0px;
-   
 }
 
 .addBox {
@@ -71,7 +90,7 @@ h1 {
     height: 49px;
     width: 49px;
     border: none;
-    color: #31393C;
+    color: $dark;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
     &:hover {
@@ -81,34 +100,20 @@ h1 {
 }
 
 input[type=checkbox] {
-    appearance:none;
+    appearance: none;
     border-radius: 100%;
-    &:hover{
+    &:hover {
         cursor: pointer;
     }
 }
-
-
-//.checkBox {
-//    width: 30px;
-//    height: 30px;
-//    background: #ddd;
-//    border-radius: 100%;
-//    
-//    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
-//    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-//    &:hover {
-//        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-//    }
-//}
 
 button {
     width: 30px;
     height: 30px;
     border-radius: 100%;
-    background-color: #fff;
+    background-color: $white;
     border: none;
-    color: #505050;
+    color: $grey;
     margin: 5px 5px 5px 5px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
@@ -119,7 +124,29 @@ button {
 }
 
 .taskDone {
-    text-decoration: line-through;
+    position: relative;
+    width: 70%;
+     ::before {
+        content: '';
+        display: block;
+        height: 3px;
+        top: 50%;
+        left: 0px;
+        background-color: $white;
+        position: absolute;
+        animation-duration: 1000ms;
+        animation-name: line;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes line {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
 
 ul {
@@ -127,7 +154,6 @@ ul {
     width: auto;
     padding-left: 20px;
     padding-right: 20px;
-    
 }
 
 li {
@@ -137,30 +163,30 @@ li {
     padding: 0px;
     border-radius: 15px;
     margin-bottom: 10px;
-    background-color: #FDCA40;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    background-color: $orange;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     div {
         display: flex;
-        justify-content:flex-start;
+        justify-content: flex-start;
         align-items: center;
-        
     }
-    span{
-        color:#fff;
+    span {
+        color: $white;
         padding: 5px;
+        font-size: 1.2rem;
     }
-    button{
-        color: #31393C;
+    button {
+        color: $dark;
     }
 }
 
-li:nth-child(odd){
-    background-color: #F79824;
+li:nth-child(odd) {
+    background-color: $orangeDark;
 }
 
 p {
     font-size: 1.5rem;
-    color: #505050
+    color: $grey;
 }
 
 .addBox input {
@@ -175,6 +201,9 @@ p {
     &:hover {
         box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     }
+    &::placeholder {
+        color: $cream;
+    }
 }
 
 .todoContainer {
@@ -182,68 +211,126 @@ p {
 }
 
 .hideAnimate {
-    visibility: hidden;
-    transition: 2000ms;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    z-index: 1 !important;
+    transition: all 600ms ease-in-out;
 }
 
-p{
+p {
     width: 200px;
     margin: 0px;
     padding: 0px;
 }
 
-
-
-.check, .radio{
-  height: 30px;
-  width: 30px;
-    background-color: #fff;
-  position: relative;
+.check,
+.radio {
+    height: 30px;
+    width: 30px;
+    background-color: $white;
+    position: relative;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
     &:hover {
         cursor: pointer;
         box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     }
-    
-    
 }
 
-.check:after, .radio:after{
+.check:after,
+.radio:after {
     width: 23px;
     height: 24px;
     border-radius: 100%;
     border: none;
-  content: '\00D7';
-  display: block;
-  
-  background-image: url('https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-21-32.png');
-  pointer-events: none;
-  font-size: 15px;
-  position: absolute;
-  top: -1px;
-  left: 0;
-  color: transparent;
-  transition: .25s all ease-in-out;
-  line-height: 15px;
-  background-position: 4px 5px;
-  background-repeat: no-repeat;
-  background-size: 15px 15px;
-  border-width: 4px;
-  border-style: solid;
-  border-color: transparent;
+    content: '\00D7';
+    display: block;
+    background-image: url('https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-21-32.png');
+    pointer-events: none;
+    font-size: 15px;
+    position: absolute;
+    top: -1px;
+    left: 0;
+    color: transparent;
+    transition: .25s all ease-in-out;
+    line-height: 15px;
+    background-position: 4px 5px;
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent;
 }
 
-.check:checked:after,  {
-  border-color:#1fa548
-}
-.check:hover:after, .radio:hover:after{
-  border-color: none;
+.check:checked:after,
+{
+    border-color: $green;
 }
 
-
-
+.check:hover:after,
+.radio:hover:after {
+    border-color: none;
+}
 
 .filterBox {
     position: absolute;
+    top: 100%;
+    left: 0px;
+}
+
+.fullpage-animate {
+    position: fixed;
+    background-color: $orangeDark;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        position: absolute;
+        top: 200px;
+        font-size: 5rem;
+        color: $white;
+        text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.7);
+        animation-name: colorChange;
+        animation-duration: 1500ms;
+    }
+}
+
+@keyframes colorChange{
+    0%{font-size:0rem}
+    100%{font-size: 5rem}
+}
+
+.spinner {
+    width: 80px;
+    height: 80px;
+    border: 5px solid white;
+    border-top: 3px solid $orange;
+    border-radius: 100%;
+    z-index: 2000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    animation-name: spinner;
+    animation-deflay: 0s;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

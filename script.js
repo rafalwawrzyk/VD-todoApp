@@ -81,9 +81,7 @@
                         list[i].parentElement.style.display = "block"
                     }
                 },
-                searchShow:function(){
-                    
-                }
+               
               
 
 
@@ -96,3 +94,13 @@
                 }
             }
         })
+        
+  //      hide loading element after 2sec
+        function hideLoadingPage(){
+            setTimeout(function(){
+               let fullpage = document.querySelector('.fullpage-animate');
+                fullpage.classList.add('hideAnimate')
+                
+            },1000)
+        }
+        hideLoadingPage();

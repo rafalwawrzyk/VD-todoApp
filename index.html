@@ -13,12 +13,12 @@
     <div id="app">
         <div class="searchContainer">
             <i class="fa fa-search" aria-hidden="true" @click="hide = !hide"></i>
-            <input type="text" placeholder="search todo" v-model="search" :class='{hide:hide}'>
+            <input type="text" placeholder="search todo..." v-model="search" :class='{hide:hide}'>
         </div>
 
         <div class="inputContainer">
             <div class="addBox">
-                <input type="text" placeholder="add to do" @keyup.enter="addTodo">
+                <input type="text" placeholder="add todo..." @keyup.enter="addTodo">
                 <button @click="addTodo" class="addBtn">✚</button>
             </div>
 
@@ -50,6 +50,11 @@
             <button @click="uncompleted"><i class="fa fa-tasks" aria-hidden="true"></i>
         </button>
         </div>
+
+    </div>
+    <div class="fullpage fullpage-animate animated  ">
+       <h1>ToDo App</h1>
+        <div class="spinner"></div>
 
     </div>
     <script src="https://use.fontawesome.com/4af14fa7c8.js"></script>
