@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue course</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <div class="searchContainer">
+            <i class="fa fa-search" aria-hidden="true" @click="searchShow"></i>
+            <input type="text" placeholder="search todo" v-model="search">
+        </div>
+
+        <div class="inputContainer">
+            <div class="addBox">
+                <input type="text" placeholder="add to do" @keyup.enter="addTodo">
+                <button @click="addTodo" class="addBtn">✚</button>
+            </div>
+
+        </div>
+        <div class="todoContainer">
+            <ul>
+                <li v-for="(todo,index) in filtered">
+                    <todo-component v-bind:todo="todo"></todo-component>
+                    <button @click="removeTodo(index)">remove</button>
+                    <input type="checkbox" class="check" v-model="todo.complete">
+                </li>
+
+            </ul>
+        </div>
+
+        <button @click="completed">Complete</button>
+        <button @click="all">All</button>
+        <button @click="uncompleted">Uncomplete</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://use.fontawesome.com/4af14fa7c8.js"></script>
+</body>
+
+</html>
