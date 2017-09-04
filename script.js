@@ -24,6 +24,7 @@
                 title: "ToDo App",
                 show: true,
                 visibility: 'all',
+                hide:'hide',
                 search:'',
                 todos: [{
                         name: 'first task',
@@ -80,6 +81,9 @@
                         list[i].parentElement.style.display = "block"
                     }
                 },
+                searchShow:function(){
+                    
+                }
               
 
 

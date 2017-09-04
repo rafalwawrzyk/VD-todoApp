@@ -12,8 +12,8 @@
 
     <div id="app">
         <div class="searchContainer">
-            <i class="fa fa-search" aria-hidden="true" @click="searchShow"></i>
-            <input type="text" placeholder="search todo" v-model="search">
+            <i class="fa fa-search" aria-hidden="true" @click="hide = !hide"></i>
+            <input type="text" placeholder="search todo" v-model="search" :class='{hide:hide}'>
         </div>
 
         <div class="inputContainer">
@@ -27,8 +27,18 @@
             <ul>
                 <li v-for="(todo,index) in filtered">
                     <todo-component v-bind:todo="todo"></todo-component>
-                    <button @click="removeTodo(index)">remove</button>
-                    <input type="checkbox" class="check" v-model="todo.complete">
+                    <div>
+                        <button @click="removeTodo(index)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                        <div class="checkBox">
+                            <input type="checkbox" class="check" v-model="todo.complete" id="checked">
+                            <label for="checked">
+                        </ label>
+                        </div>
+                       
+
+                    </div>
+
+
                 </li>
 
             </ul>
@@ -38,9 +48,9 @@
         <button @click="all">All</button>
         <button @click="uncompleted">Uncomplete</button>
     </div>
-
-    <script src="script.js"></script>
     <script src="https://use.fontawesome.com/4af14fa7c8.js"></script>
+    <script src="script.js"></script>
+    
 </body>
 
 </html>
