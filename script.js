@@ -5,7 +5,7 @@
                 }
             },
             props:['todo'],
-            template:'<p :class="{taskDone:todo.complete}"><span @click="onclicked" v-show="!edit">{{todo.name}}</span><input @keyup.enter="savedTodo" v-model="todo.name" v-show="edit"/></p>',
+            template:'<p :class="{taskDone:todo.complete}"><span @click="onclicked" v-show="!edit">{{todo.name}}</span><input @keyup.enter="savedTodo" v-model="todo.name" v-show="edit" class="searchInput"/></p>',
             methods:{
                 onclicked:function(){
                     this.edit = true;
@@ -42,7 +42,7 @@
                 addTodo:function() {
                     let input = document.querySelector('.addBox input');
                     if (input.value != "") {
-                        this.todos.push({
+                        this.todos.unshift({
                             name: input.value,
                             complete: false
                         })

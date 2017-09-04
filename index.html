@@ -26,15 +26,16 @@
         <div class="todoContainer">
             <ul>
                 <li v-for="(todo,index) in filtered">
-                    <todo-component v-bind:todo="todo"></todo-component>
+                    <todo-component v-bind:todo="todo">
+
+                    </todo-component>
                     <div>
                         <button @click="removeTodo(index)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                         <div class="checkBox">
                             <input type="checkbox" class="check" v-model="todo.complete" id="checked">
-                            <label for="checked">
-                        </ label>
+
                         </div>
-                       
+
 
                     </div>
 
@@ -43,14 +44,17 @@
 
             </ul>
         </div>
+        <div class="filterBox">
+            <button @click="completed"><i class="fa fa-check-square-o" aria-hidden="true"></i></button>
+            <button @click="all"><i class="fa fa-list" aria-hidden="true"></i></button>
+            <button @click="uncompleted"><i class="fa fa-tasks" aria-hidden="true"></i>
+        </button>
+        </div>
 
-        <button @click="completed">Complete</button>
-        <button @click="all">All</button>
-        <button @click="uncompleted">Uncomplete</button>
     </div>
     <script src="https://use.fontawesome.com/4af14fa7c8.js"></script>
     <script src="script.js"></script>
-    
+
 </body>
 
 </html>
