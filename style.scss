@@ -1,5 +1,5 @@
 $lightBlue:#B5E2FA;
-$blue:#33A1FD;
+$blue:rgba(219, 219, 219, 0.79);
 $white:#fff;
 $cream:#dddddd;
 $darkcream:#bfbfbf;
@@ -7,7 +7,7 @@ $dark:#31393C;
 $grey:#505050;
 $orange:#FDCA40;
 $orangeDark:#F79824;
-$green:#1fa548;
+$green:#39d368;
 body {
     background-color: $lightBlue;
 }
@@ -53,9 +53,9 @@ input:focus {
 
 .searchInput {
     border: none;
-    background-color: $white;
+    background-color: $cream;
     padding: 5px;
-    color: $darkcream;
+    color: $white;
     margin-left: 10px;
     width: 60%;
 }
@@ -69,7 +69,8 @@ input:focus {
 
 h1 {
     text-align: center;
-    color: $darkcream;
+    color: $white;
+    font-size: 3rem;
 }
 
 .inputContainer {
@@ -89,6 +90,7 @@ h1 {
     border-radius: 100%;
     height: 49px;
     width: 49px;
+    background-color: $green;
     border: none;
     color: $dark;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -132,7 +134,7 @@ button {
         height: 3px;
         top: 50%;
         left: 0px;
-        background-color: $white;
+        background-color: $green;
         position: absolute;
         animation-duration: 1000ms;
         animation-name: line;
@@ -161,9 +163,8 @@ li {
     margin-left: auto;
     margin-right: auto;
     padding: 0px;
-    border-radius: 15px;
     margin-bottom: 10px;
-    background-color: $orange;
+    background-color: $white;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     div {
         display: flex;
@@ -171,7 +172,7 @@ li {
         align-items: center;
     }
     span {
-        color: $white;
+        color: $grey;
         padding: 5px;
         font-size: 1.2rem;
     }
@@ -181,7 +182,7 @@ li {
 }
 
 li:nth-child(odd) {
-    background-color: $orangeDark;
+    background-color: $white;
 }
 
 p {

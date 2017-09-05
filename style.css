@@ -3,7 +3,7 @@ body {
 
 #app {
   min-height: 400px;
-  background-color: #33A1FD;
+  background-color: rgba(219, 219, 219, 0.79);
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -43,9 +43,9 @@ input:focus {
 
 .searchInput {
   border: none;
-  background-color: #fff;
+  background-color: #dddddd;
   padding: 5px;
-  color: #bfbfbf;
+  color: #fff;
   margin-left: 10px;
   width: 60%; }
 
@@ -59,7 +59,8 @@ input:focus {
 
 h1 {
   text-align: center;
-  color: #bfbfbf; }
+  color: #fff;
+  font-size: 3rem; }
 
 .inputContainer {
   width: 100%;
@@ -85,6 +86,7 @@ h1 {
   border-radius: 100%;
   height: 49px;
   width: 49px;
+  background-color: #39d368;
   border: none;
   color: #31393C;
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -132,7 +134,7 @@ button {
     height: 3px;
     top: 50%;
     left: 0px;
-    background-color: #fff;
+    background-color: #39d368;
     position: absolute;
     -webkit-animation-duration: 1000ms;
     animation-duration: 1000ms;
@@ -164,9 +166,8 @@ li {
   margin-left: auto;
   margin-right: auto;
   padding: 0px;
-  border-radius: 15px;
   margin-bottom: 10px;
-  background-color: #FDCA40;
+  background-color: #fff;
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
   li div {
@@ -183,14 +184,14 @@ li {
     -ms-flex-align: center;
     align-items: center; }
   li span {
-    color: #fff;
+    color: #505050;
     padding: 5px;
     font-size: 1.2rem; }
   li button {
     color: #31393C; }
 
 li:nth-child(odd) {
-  background-color: #F79824; }
+  background-color: #fff; }
 
 p {
   font-size: 1.5rem;
@@ -278,7 +279,7 @@ p {
   border-color: transparent; }
 
 .check:checked:after {
-  border-color: #1fa548; }
+  border-color: #39d368; }
 
 .check:hover:after,
 .radio:hover:after {
