@@ -104,18 +104,18 @@ new Vue({
     // local Storage methods
     watch: {
         todos: {
-            handler:function() {
-                console.log('Todos changed');
-                localStorage.setItem('todos',JSON.stringify(this.todos))
-
+            //set todos to local storage
+            handler: function () {
+                localStorage.setItem('todos', JSON.stringify(this.todos))
             },
-            deep:true
+            deep: true
 
         }
     },
-    mounted:function(){
-        console.log('App mounted');
-        if(localStorage.getItem('todos')){
+    mounted: function () {
+        //get todos form localStorage
+        //and set todos to json todos
+        if (localStorage.getItem('todos')) {
             this.todos = JSON.parse(localStorage.getItem('todos'));
         }
     }
