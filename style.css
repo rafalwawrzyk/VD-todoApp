@@ -1,5 +1,5 @@
 body {
-  background-color: #39d368;
+  background-color: #F79824;
   font-family: 'Roboto', sans-serif; }
 
 #app {
@@ -23,7 +23,11 @@ input:focus {
   .searchContainer i {
     border-radius: 100%;
     padding: 10px;
-    background-color: #fff; }
+    background-color: #fff;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
     .searchContainer i:hover {
       cursor: pointer;
       -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -168,6 +172,12 @@ li {
   margin-right: auto;
   padding: 0px;
   margin-bottom: 10px;
+  -webkit-animation-name: todoAdd;
+  animation-name: todoAdd;
+  -webkit-animation-duration: 1500ms;
+  animation-duration: 1500ms;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
   background-color: #fff;
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
@@ -191,8 +201,17 @@ li {
   li button {
     color: #31393C; }
 
-li:nth-child(odd) {
-  background-color: #fff; }
+@-webkit-keyframes todoAdd {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes todoAdd {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 p {
   font-size: 1.5rem;
