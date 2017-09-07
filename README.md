@@ -13,14 +13,14 @@
 11. Dodałem kilka animacji, pierwsza to loading page.Zrobiłem go na beforeMount ale można też zrobić oszukany loadingPage w taki sposób:
 
 
-function hideLoadingPage() {
-    setTimeout(function () {
-        let fullpage = document.querySelector('.fullpage-animate');
-        fullpage.classList.add('hideAnimate')
+    function hideLoadingPage() {
+        setTimeout(function () {
+            let fullpage = document.querySelector('.fullpage-animate');
+            fullpage.classList.add('hideAnimate')
 
-    }, 1000)
-}
-hideLoadingPage();
+            }, 1000)
+        }
+        hideLoadingPage();
 
 12. Do edycji styli używałem scss oraz komilatora prepross. Jeśli jest potrzeba to mogę kod przerobić na wybraną przez Panstwa metodyke.
 13. Cały projekt starałem się wykonać zgodnie z specyfikacją Vue.js
