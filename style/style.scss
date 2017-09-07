@@ -1,24 +1,26 @@
-$lightBlue:#B5E2FA;
-$blue:rgba(219, 219, 219, 0.79);
-$white:#fff;
-$cream:#dddddd;
-$darkcream:#bfbfbf;
-$dark:#31393C;
-$grey:#505050;
-$orange:#FDCA40;
-$orangeDark:#F79824;
-$green:#39d368;
+$lightBlue:rgb(181, 226, 250);
+$blue:rgb(215, 238, 247);
+$white:rgb(255, 255, 255);
+$cream:rgb(221, 221, 221);
+$darkcream:rgb(191, 191, 191);
+$dark:rgb(49, 57, 60);
+$grey:rgb(80, 80, 80);
+$lightGrey:rgba(219, 219, 219, 0.79);
+$orange:rgb(253, 202, 64);
+$orangeDark:rgb(247, 152, 36);
+$green:rgb(57, 211, 104);
+
 
 
 
 body {
-    background-color: $orangeDark;
+    background-color: $green;
     font-family: 'Roboto', sans-serif;
 }
 
 #app {
     min-height: 400px;
-    background-color: $blue;
+    background-color: $lightGrey;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -65,11 +67,11 @@ input:focus {
     width: 60%;
 }
 
-.hide {
-    opacity: 0 !important;
-    visibility: hidden !important;
-    z-index: 1 !important;
-    transition: all 600ms ease-in-out;
+.hide-enter-active, .hide-leave-active {
+  transition: opacity .5s
+}
+.hide-enter, .hide-leave-to{
+  opacity: 0
 }
 
 h1 {
@@ -120,6 +122,7 @@ button {
     border-radius: 100%;
     background-color: $white;
     border: none;
+    outline: none;
     color: $grey;
     margin: 5px 5px 5px 5px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -132,28 +135,9 @@ button {
 
 .taskDone {
     position: relative;
-    width: 70%;
-     ::before {
-        content: '';
-        display: block;
-        height: 3px;
-        top: 50%;
-        left: 0px;
-        background-color: $green;
-        position: absolute;
-        animation-duration: 1000ms;
-        animation-name: line;
-        animation-fill-mode: forwards;
-    }
-}
-
-@keyframes line {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
+    text-decoration: line-through;
+    text-decoration-color: $green;
+    text-decoration-style:double;
 }
 
 ul {
@@ -294,7 +278,7 @@ p {
 
 .fullpage-animate {
     position: fixed;
-    background-color: $orangeDark;
+    background-color: $green;
     width: 100%;
     height: 100%;
     opacity: 1;
@@ -339,6 +323,8 @@ p {
     animation-duration: 1s;
     animation-iteration-count: infinite;
 }
+
+
 
 @keyframes spinner {
     0% {

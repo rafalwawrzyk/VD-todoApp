@@ -1,5 +1,5 @@
 body {
-  background-color: #F79824;
+  background-color: #39d368;
   font-family: 'Roboto', sans-serif; }
 
 #app {
@@ -23,7 +23,7 @@ input:focus {
   .searchContainer i {
     border-radius: 100%;
     padding: 10px;
-    background-color: #fff;
+    background-color: white;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -37,7 +37,7 @@ input:focus {
       transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
   .searchContainer input {
     border: none;
-    background-color: #fff;
+    background-color: white;
     padding: 5px; }
     .searchContainer input::-webkit-input-placeholder {
       color: #dddddd; }
@@ -50,27 +50,27 @@ input:focus {
   border: none;
   background-color: #dddddd;
   padding: 5px;
-  color: #fff;
+  color: white;
   margin-left: 10px;
   width: 60%; }
 
-.hide {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  z-index: 1 !important;
-  -webkit-transition: all 600ms ease-in-out;
-  -o-transition: all 600ms ease-in-out;
-  transition: all 600ms ease-in-out; }
+.hide-enter-active, .hide-leave-active {
+  -webkit-transition: opacity .5s;
+  -o-transition: opacity .5s;
+  transition: opacity .5s; }
+
+.hide-enter, .hide-leave-to {
+  opacity: 0; }
 
 h1 {
   text-align: center;
-  color: #fff;
+  color: white;
   font-size: 3rem; }
 
 .inputContainer {
   width: 100%;
   margin: 0 auto;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid white;
   padding: 20px 0px 20px 0px; }
 
 .addBox {
@@ -93,7 +93,7 @@ h1 {
   width: 49px;
   background-color: #39d368;
   border: none;
-  color: #31393C;
+  color: #31393c;
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -116,8 +116,9 @@ button {
   width: 30px;
   height: 30px;
   border-radius: 100%;
-  background-color: #fff;
+  background-color: white;
   border: none;
+  outline: none;
   color: #505050;
   margin: 5px 5px 5px 5px;
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -132,33 +133,11 @@ button {
 
 .taskDone {
   position: relative;
-  width: 70%; }
-  .taskDone ::before {
-    content: '';
-    display: block;
-    height: 3px;
-    top: 50%;
-    left: 0px;
-    background-color: #39d368;
-    position: absolute;
-    -webkit-animation-duration: 1000ms;
-    animation-duration: 1000ms;
-    -webkit-animation-name: line;
-    animation-name: line;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards; }
-
-@-webkit-keyframes line {
-  from {
-    width: 0; }
-  to {
-    width: 100%; } }
-
-@keyframes line {
-  from {
-    width: 0; }
-  to {
-    width: 100%; } }
+  text-decoration: line-through;
+  -webkit-text-decoration-color: #39d368;
+  text-decoration-color: #39d368;
+  -webkit-text-decoration-style: double;
+  text-decoration-style: double; }
 
 ul {
   list-style: none;
@@ -178,7 +157,7 @@ li {
   animation-duration: 1500ms;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
-  background-color: #fff;
+  background-color: white;
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
   li div {
@@ -199,7 +178,7 @@ li {
     padding: 5px;
     font-size: 1.2rem; }
   li button {
-    color: #31393C; }
+    color: #31393c; }
 
 @-webkit-keyframes todoAdd {
   from {
@@ -259,7 +238,7 @@ p {
 .radio {
   height: 30px;
   width: 30px;
-  background-color: #fff;
+  background-color: white;
   position: relative;
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -312,7 +291,7 @@ p {
 
 .fullpage-animate {
   position: fixed;
-  background-color: #F79824;
+  background-color: #39d368;
   width: 100%;
   height: 100%;
   opacity: 1;
@@ -336,7 +315,7 @@ p {
     position: absolute;
     top: 200px;
     font-size: 5rem;
-    color: #fff;
+    color: white;
     text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.7);
     -webkit-animation-name: colorChange;
     animation-name: colorChange;
@@ -359,7 +338,7 @@ p {
   width: 80px;
   height: 80px;
   border: 5px solid white;
-  border-top: 3px solid #FDCA40;
+  border-top: 3px solid #fdca40;
   border-radius: 100%;
   z-index: 2000;
   position: absolute;

@@ -6,7 +6,7 @@ var TodosComponent = Vue.extend({
         }
     },
     props: ['todo'],
-    template: '<p :class="{taskDone:todo.complete}"><span @click="onclicked" v-show="!edit">{{todo.name}}</span><input @keyup.enter="savedTodo" v-model="todo.name" v-show="edit" class="searchInput"/></p>',
+    template: '<p :class="{taskDone:todo.complete}"><span @click="onclicked" v-show="!edit">{{todo.name}}</span><span v-show="edit"><input @keyup.enter="savedTodo" v-model="todo.name"  class="searchInput"/><button @click="savedTodo"><i class="fa fa-pencil" aria-hidden="true"></i></button></span> </p>',
     methods: {
         onclicked: function () {
             this.edit = true;
@@ -26,11 +26,11 @@ new Vue({
         title: "ToDo App",
         show: true,
         visibility: 'all',
-        hide: 'hide',
+        hide: false,
         search: '',
         todos: [{
                 name: 'first task',
-                complete: false
+                complete: false,
                     },
             {
                 name: 'second',
@@ -44,10 +44,12 @@ new Vue({
         //add todo method
         addTodo: function () {
             let input = document.querySelector('.addBox input');
+            let today = new Date();
+            let date = today.getFullYear() + '-' + (today.getMonth()+1) + '-' + today.getDate();
             if (input.value != "") {
-                this.todos.unshift({
+                this.todos.push({
                     name: input.value,
-                    complete: false
+                    complete: false,
                 })
                 input.value = "";
             }
@@ -118,15 +120,12 @@ new Vue({
         if (localStorage.getItem('todos')) {
             this.todos = JSON.parse(localStorage.getItem('todos'));
         }
+    },
+    beforeMount:function(){
+        console.log('hello');
+        let fullpage = document.querySelector('.fullpage-animate');
+        fullpage.classList.add('hideAnimate')
     }
 })
 
-//      hide loading element after 2sec
-function hideLoadingPage() {
-    setTimeout(function () {
-        let fullpage = document.querySelector('.fullpage-animate');
-        fullpage.classList.add('hideAnimate')
 
-    }, 1000)
-}
-hideLoadingPage();

@@ -1,0 +1,34 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>README.md</title>
+      </head>
+      <body>
+        <h1 id="vd-todo-app">VD ToDo app</h1>
+<ol>
+<li>ToDo app zrobiona w Vue.js</li>
+<li>Do celu rekrutacyjnego projekt zrobiłem lokalnie bez Vue.cli, w innym wypadku zrobiłbym to z Vue client oraz jeśli byłby to większy projekt porozdzielał bym go na mniejsze komponenty.</li>
+<li>Kolorystyka projektu oczywiście może zostać szybko zmieniona ponieważ wszelkie kolory są zapisane w zminnych.</li>
+<li>Dodawanie zadania do wykonania odbywa się poprzez dodanie do tablicy obiektów nowego obiektu. </li>
+<li>Todosy wyświetlane są od najstarszego do najnowszego w dół (poprzez pushowanie do tablicy). Odwrócenie kolejności jest możliwe oczywiście poprzez użycie metody unshift.</li>
+<li>Usuwanie todo jest poprzez metodę splice</li>
+<li>Edycja każdego todo następuje poprzez kliknięcie a następnie po edycji zapisanie następuje po wciśnięciu Enter.</li>
+<li>Filtry są zrobione poprzez sprawdzenie posiadanej klasy. </li>
+<li>Wyszukiwarka działą poprzez filtrowanie tablicy. Metoda filtrowania została dodana we  computed ponieważ computed jest zależne od właściwości.</li>
+<li>Local storage został dodany w watchu ponieważ charakteryzuje się on tym iż kod jest wykonywany po tym jak dane ulegną zmianie, a o to w tym przypadku chodziło aby przy dodaniu todo lub edycji metoda handler była &quot;odpalana&quot; i zamieniała obiekt na JSON a następnie po tym jak instancja Vue zostanie załadowana(&quot;zamotowana&quot;) parsuje obiekt JSON zapisany do local storage.</li>
+<li>Dodałem kilka animacji, pierwsza to loading page.Zrobiłem go na beforeMount ale można też zrobić oszukany loadingPage w taki sposób:</li>
+</ol>
+<p>function hideLoadingPage() {
+    setTimeout(function () {
+        let fullpage = document.querySelector(&#39;.fullpage-animate&#39;);
+        fullpage.classList.add(&#39;hideAnimate&#39;)</p>
+<pre><code>}, 1000)
+</code></pre><p>}
+hideLoadingPage();</p>
+<ol>
+<li>Do edycji styli używałem scss oraz komilatora prepross. Jeśli jest potrzeba to mogę kod przerobić na wybraną przez Panstwa metodyke.</li>
+<li>Cały projekt starałem się wykonać zgodnie z specyfikacją Vue.js</li>
+</ol>
+
+      </body>
+    </html>

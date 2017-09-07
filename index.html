@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Vue course</title>
-    <link rel="stylesheet" href="style.css">
+    <title>VD ToDoApp</title>
+    <link rel="stylesheet" href="style/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <script src="vue.js"></script>
+    <script src="script/vue.js"></script>
 </head>
 
 <body>
@@ -14,7 +14,10 @@
     <div id="app">
         <div class="searchContainer">
             <i class="fa fa-search" aria-hidden="true" @click="hide = !hide"></i>
-            <input type="text" placeholder="search todo..." v-model="search" :class='{hide:hide}'>
+            <transition name="hide">
+                <input v-if='hide' type="text" placeholder="search todo..." v-model="search">
+            </transition>
+            
             <h1>ToDo App</h1>
         </div>
 
@@ -29,10 +32,9 @@
             <ul>
                 <li v-for="(todo,index) in filtered">
                     <todo-component v-bind:todo="todo">
-
                     </todo-component>
                     <div>
-                        <button @click="removeTodo(index)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                        <button @click="removeTodo(index)"><i class="fa fa-trash" aria-hidden="true"></i></button>
                         <div class="checkBox">
                             <input type="checkbox" class="check" v-model="todo.complete" id="checked">
 
@@ -60,7 +62,7 @@
 
     </div>
     <script src="https://use.fontawesome.com/4af14fa7c8.js"></script>
-    <script src="script.js"></script>
+    <script src="script/script.js"></script>
 
 </body>
 
