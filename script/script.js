@@ -44,8 +44,6 @@ new Vue({
         //add todo method
         addTodo: function () {
             let input = document.querySelector('.addBox input');
-            let today = new Date();
-            let date = today.getFullYear() + '-' + (today.getMonth()+1) + '-' + today.getDate();
             if (input.value != "") {
                 this.todos.push({
                     name: input.value,
@@ -122,7 +120,6 @@ new Vue({
         }
     },
     beforeMount:function(){
-        console.log('hello');
         let fullpage = document.querySelector('.fullpage-animate');
         fullpage.classList.add('hideAnimate')
     }
